@@ -1,5 +1,7 @@
 ## Mirai-api-http消息类型一览
 
+### messageChain
+
 #### Source
 
 ```json5
@@ -186,3 +188,28 @@
 4. "Heartbroken": 心碎
 5. "SixSixSix": 666
 6. "FangDaZhao": 放大招
+
+### sender
+
+#### 群
+```json5
+{
+	"id": 123456789,
+	"memberName": "xxx",
+	"permission": "MEMBER",
+	"group": {
+		"id": 12345678,
+		"name": "xxx",
+		"permission": "MEMBER"
+	}
+}
+```
+
+|    名字    |   类型  |      说明                |
+| ---------- | ------ | ------------------------ |
+|     id     |  Long  | 发送消息的QQ号            |
+| memberName | String | 发送消息的QQ马甲          |
+| permission | String | 发送消息的QQ号在群内的身份 |
+|  group.id  |  Long  | 群号                     |
+| group.name | String | 群名                     |
+| group.permission | String | 发送消息的QQ号在群中的权限，OWNER、ADMINISTRATOR或MEMBER |
